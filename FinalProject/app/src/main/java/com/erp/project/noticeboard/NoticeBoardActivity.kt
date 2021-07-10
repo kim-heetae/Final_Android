@@ -1,16 +1,12 @@
-package com.erp.project.noticeboard;
+package com.erp.project.noticeboard
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.erp.project.R
 
-import android.os.Bundle;
-
-import com.erp.project.R;
-
-public class NoticeBoardActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notice_board);
+class NoticeBoardActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_notice_board)
     }
 }
