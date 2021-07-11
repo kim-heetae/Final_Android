@@ -9,23 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
-        <activity android:name=".noticeboard.DeptNoticeActivity"/>
-        <activity android:name=".noticeboard.NoticeBoardActivity" />
-        <activity android:name=".myinfo.MyInfoActivity" />
-        <activity android:name=".mainpage.MainActivity" />
-        <activity android:name=".chat.ChatPageActivity" />
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".chat.ChatMainActivity" />
-        <activity android:name=".chat.ChatListActivity" />
-        <activity android:name=".calender.CalenderActivity" />
-        <activity android:name=".attend.AttendActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity"
+            android:theme="@style/Start_splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".noticeboard.DeptNoticeActivity"/>
+        <activity android:name=".noticeboard.NoticeBoardActivity" />
+        <activity android:name=".myinfo.MyInfoActivity" />
+        <activity android:name=".mainpage.MainActivity" />
+        <activity android:name=".chat.ChatPageActivity" />
+        <activity android:name=".login.LoginActivity"/>
+        <activity android:name=".chat.ChatMainActivity" />
+        <activity android:name=".chat.ChatListActivity" />
+        <activity android:name=".calender.CalenderActivity" />
+        <activity android:name=".attend.AttendActivity" />
     </application>
 
 </manifest>
