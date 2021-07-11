@@ -41,7 +41,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:text="100001" />
+                    android:gravity="center"
+                    android:text="100001"
+                    android:textStyle="bold"
+                    />
 
                 <Space
                     android:layout_width="match_parent"
@@ -53,7 +56,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:text="인사과" />
+                    android:gravity="center"
+                    android:text="인사과"
+                    android:textStyle="bold"/>
             </TableRow>
 
             <TableRow
@@ -66,7 +71,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:text="홍길동" />
+                    android:gravity="center"
+                    android:text="홍길동"
+                    android:textStyle="bold"/>
 
                 <Space
                     android:layout_width="match_parent"
@@ -78,7 +85,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:text="사원" />
+                    android:gravity="center"
+                    android:text="사원"
+                    android:textStyle="bold"/>
             </TableRow>
 
         </TableLayout>
@@ -102,12 +111,14 @@
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="공지사항" />
+                android:text="공지사항"
+                android:textStyle="bold"/>
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="업무" />
+                android:text="업무"
+                android:textStyle="bold"/>
 
         </com.google.android.material.tabs.TabLayout>
 
@@ -136,7 +147,8 @@
                 android:layout_weight="7"
 
                 android:gravity="center"
-                android:text="제목" />
+                android:text="제목"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/main_board_name"
@@ -144,7 +156,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:gravity="center"
-                android:text="작성자" />
+                android:text="작성자"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/main_board_date"
@@ -152,7 +165,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:gravity="center"
-                android:text="작성일" />
+                android:text="작성일"
+                android:textStyle="bold"/>
         </TableRow>
 
         <TableRow
@@ -369,5 +383,110 @@
                 android:text="TextView" />
         </TableRow>
     </TableLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="67dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="2.5"
+            >
+
+            <ImageView
+                android:id="@+id/main_icon_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/icon_calendar"
+                android:layout_weight="7"/>
+
+            <TextView
+                android:id="@+id/main_tv_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="일정관리"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="2.5">
+
+            <ImageView
+                android:id="@+id/main_icon_attend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/icon_attend"
+                android:layout_weight="7"/>
+
+            <TextView
+                android:id="@+id/main_tv_attend"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="근태관리"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2.5">
+
+            <ImageView
+                android:id="@+id/main_icon_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/icon_info"
+                android:layout_weight="7"/>
+
+            <TextView
+                android:id="@+id/main_tv_info"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="내정보관리"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2.5">
+
+            <ImageView
+                android:id="@+id/main_icon_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/icon_chat"
+                android:layout_weight="7"/>
+
+            <TextView
+                android:id="@+id/main_tv_chat"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="채팅"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
 
 </LinearLayout>
