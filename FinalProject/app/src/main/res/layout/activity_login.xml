@@ -12,109 +12,107 @@
     tools:context=".login.LoginActivity">
 
     <ImageView
-        android:id="@+id/img_logo"
+        android:id="@+id/login_img_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/mainlogo" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="29dp" />
+        android:layout_height="31dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/login_radius"
+        >
 
-        <TextView
-            android:id="@+id/tv_id"
-            android:layout_width="265dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="7.5"
-            android:gravity="center"
-            android:text="ID"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <ImageView
+            android:id="@+id/login_img_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            app:srcCompat="@drawable/login_icon_user"
+            app:tint="@color/dark_gray"/>
 
         <EditText
-            android:id="@+id/pt_id"
+            android:id="@+id/login_pt_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2.5"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="number" />
     </LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="29dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="30dp"
+        android:background="@drawable/login_radius"
+        >
 
-        <TextView
-            android:id="@+id/tv_pw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:gravity="center"
-            android:text="PW"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <ImageView
+            android:id="@+id/login_img_pw"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            app:srcCompat="@drawable/login_icon_password"
+            app:tint="@color/dark_gray"/>
 
         <EditText
-            android:id="@+id/pw_pw"
-            android:layout_width="wrap_content"
+            android:id="@+id/login_pw_password"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="7"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="textPassword" />
     </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="29dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="41dp"
         android:orientation="horizontal">
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_weight="1" />
+
         <CheckBox
-            android:id="@+id/cb_autologin"
+            android:id="@+id/login_cb_autologin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="자동 로그인" />
 
         <CheckBox
-            android:id="@+id/cb_fplogin"
+            android:id="@+id/login_cb_fplogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="지문 로그인" />
     </LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="28dp" />
-
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/login_btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#999999"
-        android:text="Login" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="25dp" />
+        android:backgroundTint="#F2B03F"
+        android:text="Login"
+        android:layout_margin="30dp"
+        android:background="@drawable/login_radius"
+        />
 
     <TextView
-        android:id="@+id/tv_forgot_pw"
+        android:id="@+id/login_tv_forgot_pw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Forgot Password?" />
+
+
 
 </LinearLayout>
