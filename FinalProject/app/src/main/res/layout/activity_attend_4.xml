@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".mainpage.MainActivity"
+    tools:context=".attend.AttendActivity"
     android:layout_margin="15dp">
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -92,36 +91,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/main_tab_board"
-            android:layout_width="197dp"
-            android:layout_height="31dp">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="공지사항"
-                android:textStyle="bold"/>
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="업무"
-                android:textStyle="bold"/>
-
-        </com.google.android.material.tabs.TabLayout>
-
-        <TextView
-            android:id="@+id/main_tv_more"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:layout_gravity="center"
-            android:text="▶더보기" />
-
-    </LinearLayout>
+        android:orientation="horizontal"/>
 
     <TableLayout
 
@@ -139,7 +109,7 @@
                 android:layout_weight="7"
 
                 android:gravity="center"
-                android:text="제목"
+                android:text="날짜"
                 android:textStyle="bold" />
 
             <TextView
@@ -148,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:gravity="center"
-                android:text="작성자"
+                android:text="출근시간"
                 android:textStyle="bold" />
 
             <TextView
@@ -157,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:gravity="center"
-                android:text="작성일"
+                android:text="퇴근시간"
                 android:textStyle="bold" />
         </TableRow>
 
@@ -377,106 +347,51 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="67dp" />
+        android:layout_height="45dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="85dp"
+        android:layout_height="120dp"
         android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="2.5"
-            >
-
-            <ImageView
-                android:id="@+id/main_icon_calendar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/icon_calendar"
-                android:layout_weight="7"/>
-
-            <TextView
-                android:id="@+id/main_tv_calendar"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:text="일정관리"
-                android:textStyle="bold"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Space
+            android:layout_width="44dp"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_weight="2.5">
+            android:layout_weight="1" />
 
-            <ImageView
-                android:id="@+id/main_icon_attend"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/icon_attend"
-                android:layout_weight="7"/>
-
-            <TextView
-                android:id="@+id/main_tv_attend"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:text="근태관리"
-                android:textStyle="bold"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/attend_btn_returnWorkOut_4"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="2.5">
+            android:layout_margin="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/attend_button_radius"
+            android:backgroundTint="#74b9ff"
+            android:text="외근복귀"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
 
-            <ImageView
-                android:id="@+id/main_icon_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/icon_info"
-                android:layout_weight="7"/>
-
-            <TextView
-                android:id="@+id/main_tv_info"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:text="내정보관리"
-                android:textStyle="bold"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Space
+            android:layout_width="56dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="2.5">
+            android:layout_weight="1" />
 
-            <ImageView
-                android:id="@+id/main_icon_chat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/icon_chat"
-                android:layout_weight="7"/>
+        <Button
+            android:id="@+id/attend_btn_offWork_4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/attend_button_radius"
+            android:backgroundTint="#f699cd"
+            android:text="퇴근"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/main_tv_chat"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:text="채팅"
-                android:textStyle="bold"/>
-        </LinearLayout>
+        <Space
+            android:layout_width="41dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
     </LinearLayout>
 
 
