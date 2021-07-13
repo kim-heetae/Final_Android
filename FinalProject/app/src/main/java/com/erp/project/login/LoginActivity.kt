@@ -41,13 +41,16 @@ class LoginActivity : AppCompatActivity() {
         val tomcatMassage: String
         val id = enter_id.text.toString()
         val pw = enter_pw.text.toString()
+        val ad = "ad"
         try {
             val loginTomcat = LoginConnectTomcat()
             if (id.isNotEmpty() && pw.isNotEmpty()) {
-                tomcatMassage = loginTomcat.execute(id, pw).get()
+                tomcatMassage = loginTomcat.execute(id, pw, ad).get()
                 if (tomcatMassage != null) {
                     val nextMainPage = Intent(this, MainActivity::class.java)
                     startActivity(nextMainPage)
+                }else{
+                    Toast.makeText(applicationContext, "아이디와 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 Toast.makeText(applicationContext, "아이디와 비밀번호를 입력하세요", Toast.LENGTH_SHORT).show()
@@ -85,6 +88,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    /*forget password 클릭 시 팝업창*/
     fun passwordPopup(view: View) {
         val customDialog = LayoutInflater.from(this).inflate(R.layout.login_custom_popup, null, false)
         val builder = AlertDialog.Builder(this)

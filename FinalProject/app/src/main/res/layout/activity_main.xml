@@ -25,12 +25,12 @@
             app:srcCompat="@drawable/mainlogo" />
 
 
-
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="4">
+            android:layout_margin="20dp"
+            android:layout_weight="4"
+            android:background="@drawable/main_table_outside">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -42,19 +42,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
+                    android:background="@drawable/main_table_inside"
                     android:gravity="center"
                     android:text="100001"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/main_tv_dept"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
+                    android:background="@drawable/main_table_inside"
                     android:gravity="center"
                     android:text="인사과"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </TableRow>
 
             <TableRow
@@ -67,18 +68,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
+                    android:background="@drawable/main_table_inside"
                     android:gravity="center"
                     android:text="홍길동"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/main_tv_pos"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
+                    android:background="@drawable/main_table_inside"
                     android:gravity="center"
                     android:text="사원"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </TableRow>
 
         </TableLayout>
@@ -96,288 +99,31 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/main_tab_board"
-            android:layout_width="197dp"
-            android:layout_height="31dp">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="공지사항"
-                android:textStyle="bold"/>
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="업무"
-                android:textStyle="bold"/>
-
-        </com.google.android.material.tabs.TabLayout>
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            app:tabBackground="@drawable/main_tab"
+            app:tabIndicatorFullWidth="false"
+            />
 
         <TextView
             android:id="@+id/main_tv_more"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:layout_gravity="center"
-            android:text="▶더보기" />
-
+            android:layout_height="30dp"
+            android:layout_gravity="start"
+            android:gravity="center|right"
+            android:text="▶ 더보기" />
     </LinearLayout>
 
-    <TableLayout
-
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/main_tab_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="300dp">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/main_board_title"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_weight="7"
-
-                android:gravity="center"
-                android:text="제목"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/main_board_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="작성자"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/main_board_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="작성일"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            >
-
-            <TextView
-                android:id="@+id/main_title_1"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_weight="7"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_name_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_date_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-        </TableRow>
-
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
-            <TextView
-                android:id="@+id/main_title_2"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_weight="7"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_name_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_date_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            >
-
-            <TextView
-                android:id="@+id/main_title_3"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_weight="7"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_name_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_date_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/main_title_4"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_weight="7"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_name_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_date_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            >
-
-            <TextView
-                android:id="@+id/main_title_5"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_weight="7"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_name_5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_date_5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            >
-
-            <TextView
-                android:id="@+id/main_title_6"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_weight="7"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_name_6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_date_6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/main_title_7"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_weight="7"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_name_7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/main_date_7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.5"
-                android:gravity="center"
-                android:text="TextView" />
-        </TableRow>
-    </TableLayout>
+    </androidx.viewpager.widget.ViewPager>
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="67dp" />
+        android:layout_height="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
