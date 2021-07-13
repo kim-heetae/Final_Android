@@ -7,6 +7,6 @@ import com.erp.project.R
 class AttendActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.`activity_attend_1.xml`)
+        setContentView(R.layout.activity_attend_1)
     }
 }

@@ -166,7 +166,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/icon_attend"
-                android:layout_weight="7"/>
+                android:layout_weight="7"
+                android:onClick="tsConnect"/>
 
             <TextView
                 android:id="@+id/main_tv_attend"
