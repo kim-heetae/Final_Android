@@ -34,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="9"
+            android:layout_gravity="center"
             app:srcCompat="@drawable/login_icon_user"
             app:tint="@color/dark_gray"/>
 
@@ -42,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
             android:ems="10"
             android:inputType="number" />
     </LinearLayout>
@@ -67,6 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
             android:ems="10"
             android:inputType="textPassword" />
     </LinearLayout>
@@ -104,14 +107,15 @@
         android:text="Login"
         android:layout_margin="30dp"
         android:background="@drawable/login_radius"
-        />
+        android:onClick="loginConnect"/>
 
     <TextView
         android:id="@+id/login_tv_forgot_pw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Forgot Password?" />
+        android:text="Forgot Password?"
+        android:onClick="passwordPopup"/>
 
 
 

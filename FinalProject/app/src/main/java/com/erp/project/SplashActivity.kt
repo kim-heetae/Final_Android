@@ -10,7 +10,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        val test = Intent(this, LoginActivity::class.java)
+        val nextLogin = Intent(this, LoginActivity::class.java)
 
         try{
             Thread.sleep(3000)
@@ -18,7 +18,8 @@ class SplashActivity : AppCompatActivity() {
         catch(e:Exception){
 
         }
-        startActivity(test)
+        startActivity(nextLogin)
         finish()
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 }
