@@ -94,17 +94,17 @@
 
 
     <TextView
-        android:id="@+id/emp_board_title"
+        android:id="@+id/notice_board_title"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:gravity="center|center"
-        android:background="@color/main_background"
+        android:background="@color/main_selector"
         android:textColor="@color/white"
-        android:text="업무 게시판" />
+        android:text="공지사항 게시판" />
 
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/emp_viewpager2"
+        android:id="@+id/notice_viewpager2"
         android:layout_width="match_parent"
         android:layout_height="300dp">
 
