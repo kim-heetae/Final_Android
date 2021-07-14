@@ -142,7 +142,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/icon_calendar"
-                android:layout_weight="7"/>
+                android:layout_weight="7"
+                android:onClick="clickCalendar"/>
 
             <TextView
                 android:id="@+id/main_tv_calendar"
@@ -167,7 +168,7 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/icon_attend"
                 android:layout_weight="7"
-                android:onClick="tsConnect"/>
+                android:onClick="clickAttend"/>
 
             <TextView
                 android:id="@+id/main_tv_attend"
@@ -190,7 +191,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/icon_info"
-                android:layout_weight="7"/>
+                android:layout_weight="7"
+                android:onClick="clickMyInfo"/>
 
             <TextView
                 android:id="@+id/main_tv_info"
@@ -213,7 +215,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/icon_chat"
-                android:layout_weight="7"/>
+                android:layout_weight="7"
+                android:onClick="clickChat"/>
 
             <TextView
                 android:id="@+id/main_tv_chat"

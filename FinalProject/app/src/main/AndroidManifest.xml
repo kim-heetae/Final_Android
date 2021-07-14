@@ -27,7 +27,7 @@
         <activity android:name=".login.LoginActivity"/>
         <activity android:name=".chat.ChatMainActivity" />
         <activity android:name=".chat.ChatListActivity" />
-        <activity android:name=".calender.CalenderActivity" />
+        <activity android:name=".calender.CalendarActivity" />
         <activity android:name=".attend.AttendActivity" />
     </application>
 
