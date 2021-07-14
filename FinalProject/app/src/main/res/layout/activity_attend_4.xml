@@ -88,19 +88,16 @@
         android:layout_width="match_parent"
         android:layout_height="39dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"/>
-
     <TableLayout
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="280dp"
+        android:background="@drawable/main_table_outside">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/main_table_inside">
 
             <TextView
                 android:id="@+id/attend_date"
@@ -108,6 +105,7 @@
                 android:layout_height="35dp"
                 android:layout_weight="7"
 
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="날짜"
                 android:textStyle="bold" />
@@ -115,8 +113,9 @@
             <TextView
                 android:id="@+id/attend_getWork"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="출근시간"
                 android:textStyle="bold" />
@@ -124,8 +123,9 @@
             <TextView
                 android:id="@+id/attend_offWork"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="퇴근시간"
                 android:textStyle="bold" />
@@ -135,29 +135,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            >
+            android:background="@drawable/main_table_inside">
 
             <TextView
                 android:id="@+id/main_title_1"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_weight="7"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_name_1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_date_1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
         </TableRow>
@@ -166,29 +169,32 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:background="@drawable/main_table_inside">
 
             <TextView
                 android:id="@+id/main_title_2"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_weight="7"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_name_2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_date_2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
         </TableRow>
@@ -197,58 +203,65 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            >
+            android:background="@drawable/main_table_inside">
 
             <TextView
                 android:id="@+id/main_title_3"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_weight="7"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_name_3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_date_3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/main_table_inside">
 
             <TextView
                 android:id="@+id/main_title_4"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_weight="7"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_name_4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_date_4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
         </TableRow>
@@ -257,29 +270,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            >
+            android:background="@drawable/main_table_inside">
 
             <TextView
                 android:id="@+id/main_title_5"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_weight="7"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_name_5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_date_5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
         </TableRow>
@@ -288,58 +304,65 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            >
+            android:background="@drawable/main_table_inside">
 
             <TextView
                 android:id="@+id/main_title_6"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_weight="7"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_name_6"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_date_6"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/main_table_inside">
 
             <TextView
                 android:id="@+id/main_title_7"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_weight="7"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_name_7"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/main_date_7"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:background="@drawable/main_table_inside"
                 android:gravity="center"
                 android:text="TextView" />
         </TableRow>
