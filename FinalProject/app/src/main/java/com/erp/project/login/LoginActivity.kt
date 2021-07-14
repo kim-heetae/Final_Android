@@ -6,8 +6,13 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
+import android.view.KeyEvent.ACTION_DOWN
+import android.view.KeyEvent.KEYCODE_ENTER
 import android.view.LayoutInflater
 import android.view.View
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -32,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
         autoLogin = findViewById(R.id.login_cb_autologin)
         enter_id = findViewById(R.id.login_pt_id)
         enter_pw = findViewById(R.id.login_pw_password)
+        enterKeyController()
         autoLogin()
 
     }
@@ -102,7 +108,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-
+// 지문로그인 연결 시 사용
 /*    else if(autoLogin.isChecked && sharedPreferences.getBoolean("autoLoginEnabled",true)){
         tomcatMassage = loginTomcat.execute(id,pw).get()
         if(tomcatMassage != null){
@@ -111,6 +117,27 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
     }*/
+
+    fun enterKeyController(){
+        val idArea = findViewById<EditText>(R.id.login_pt_id)
+        val pwArea = findViewById<EditText>(R.id.login_pw_password)
+        idArea.setOnEditorActionListener{v, id, event ->
+            if(id == EditorInfo.IME_ACTION_NEXT){
+                pwArea.requestFocus()
+            }
+            true
+        }
+        pwArea.setOnKeyListener { v, keyCode, event ->
+            if((event.action == ACTION_DOWN) && (keyCode == KEYCODE_ENTER)){
+                val imm : InputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(pwArea.windowToken, 0)
+                true
+            }
+            false
+
+        }
+
+    }
 
 }
 

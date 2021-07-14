@@ -1,4 +1,4 @@
-package com.erp.project.mainpage
+package com.erp.project.mainpage.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import com.erp.project.R
 
 class MainNoticeBoardFragment : Fragment() {
 
-    fun fragInstance() : MainNoticeBoardFragment{
+    fun fragInstance() : MainNoticeBoardFragment {
         val args = Bundle()
         val frag = MainNoticeBoardFragment()
         frag.arguments=args
