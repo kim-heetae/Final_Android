@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="15dp"
     android:orientation="vertical"
-    tools:context=".mainpage.MainActivity"
-    android:layout_margin="15dp">
+    tools:context=".mainpage.MainActivity">
 
 
     <LinearLayout
@@ -23,7 +23,6 @@
             android:scaleX="1.3"
             android:scaleY="1.3"
             app:srcCompat="@drawable/mainlogo" />
-
 
 
         <TableLayout
@@ -71,7 +70,7 @@
                     android:background="@drawable/main_table_inside"
                     android:gravity="center"
                     android:text="홍길동"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/attend_tv_pos"
@@ -81,7 +80,7 @@
                     android:background="@drawable/main_table_inside"
                     android:gravity="center"
                     android:text="사원"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </TableRow>
 
         </TableLayout>
@@ -97,10 +96,10 @@
         android:id="@+id/notice_board_title"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:gravity="center|center"
         android:background="@color/main_selector"
-        android:textColor="@color/white"
-        android:text="공지사항 게시판" />
+        android:gravity="center|center"
+        android:text="공지사항 게시판"
+        android:textColor="@color/white" />
 
 
     <androidx.viewpager2.widget.ViewPager2
