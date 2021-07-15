@@ -2,26 +2,30 @@ package com.erp.project.mainpage
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.erp.project.mainpage.fragment.MainEmpBoardFragment
+import com.erp.project.mainpage.fragment.MainNoticeBoardFragment
 
-class MainFragmentAdapter (fm : FragmentManager) : FragmentPagerAdapter(fm) {
+
+class MainFragmentAdapter(fm: FragmentManager, lifecycle: Lifecycle) :
+    FragmentStateAdapter(fm, lifecycle) {
     //Fragment 만들 갯수
-    override fun getCount(): Int = 2
-
-    //Fragment 페이지 설정
-    override fun getItem(position: Int): Fragment {
-        return when (position) {
-            0 -> MainNoticeBoardFragment().fragInstance()
-            1 -> MainEmpBoardFragment().fragInstance()
-            else -> MainNoticeBoardFragment().fragInstance()
-        }
+    override fun getItemCount(): Int {
+        return 2
     }
-    //Fragment 이름.
-    override fun getPageTitle(position: Int): CharSequence? {
-        return when (position){
-            0 ->"공지사항"
-            1 ->"업무사항"
-            else -> "main"
+
+    override fun createFragment(position: Int): Fragment {
+        return when (position) {
+            0 -> {
+                MainNoticeBoardFragment()
+            }
+            1 -> {
+                MainEmpBoardFragment()
+            }
+            else -> {
+                Fragment()
+            }
         }
     }
 }

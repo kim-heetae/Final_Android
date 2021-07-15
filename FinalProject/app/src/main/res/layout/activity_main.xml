@@ -115,12 +115,12 @@
             android:text="▶ 더보기" />
     </LinearLayout>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/main_tab_viewpager"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/main_tab_viewpager2"
         android:layout_width="match_parent"
         android:layout_height="300dp">
 
-    </androidx.viewpager.widget.ViewPager>
+    </androidx.viewpager2.widget.ViewPager2>
 
     <Space
         android:layout_width="match_parent"
@@ -143,7 +143,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/icon_calendar"
-                android:layout_weight="7"/>
+                android:layout_weight="7"
+                android:onClick="clickCalendar"/>
 
             <TextView
                 android:id="@+id/main_tv_calendar"
@@ -168,7 +169,7 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/icon_attend"
                 android:layout_weight="7"
-                android:onClick="tsConnect"/>
+                android:onClick="clickAttend"/>
 
             <TextView
                 android:id="@+id/main_tv_attend"
@@ -191,7 +192,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/icon_info"
-                android:layout_weight="7"/>
+                android:layout_weight="7"
+                android:onClick="clickMyInfo"/>
 
             <TextView
                 android:id="@+id/main_tv_info"
@@ -214,7 +216,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/icon_chat"
-                android:layout_weight="7"/>
+                android:layout_weight="7"
+                android:onClick="clickChat"/>
 
             <TextView
                 android:id="@+id/main_tv_chat"

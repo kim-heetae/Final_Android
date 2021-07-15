@@ -1,4 +1,4 @@
-package com.erp.project.mainpage
+package com.erp.project.mainpage.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.erp.project.R
 class MainEmpBoardFragment : Fragment() {
 
-    fun fragInstance() : MainEmpBoardFragment{
+    fun fragInstance() : MainEmpBoardFragment {
         val args = Bundle()
         val frag = MainEmpBoardFragment()
         frag.arguments=args
