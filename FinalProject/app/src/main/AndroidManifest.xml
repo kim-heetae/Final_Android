@@ -13,17 +13,16 @@
         android:theme="@style/Theme.FinalProject">
         <activity android:name=".SplashActivity"
             android:theme="@style/Start_splash">
-        </activity>
-        <activity android:name=".noticeboard.DeptNoticeActivity"/>
-        <activity android:name=".noticeboard.NoticeBoardActivity" />
-        <activity android:name=".myinfo.MyInfoActivity" />
-        <activity android:name=".mainpage.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".noticeboard.DeptNoticeActivity"/>
+        <activity android:name=".noticeboard.NoticeBoardActivity" />
+        <activity android:name=".myinfo.MyInfoActivity" />
+        <activity android:name=".mainpage.MainActivity"/>
         <activity android:name=".chat.ChatPageActivity" />
         <activity android:name=".login.LoginActivity"/>
         <activity android:name=".chat.ChatMainActivity" />

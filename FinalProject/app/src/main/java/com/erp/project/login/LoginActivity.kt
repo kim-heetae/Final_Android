@@ -1,12 +1,11 @@
 package com.erp.project.login
 
 import android.app.Activity
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
-import android.view.KeyEvent
 import android.view.KeyEvent.ACTION_DOWN
 import android.view.KeyEvent.KEYCODE_ENTER
 import android.view.LayoutInflater
@@ -19,11 +18,11 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.HandlerCompat.postDelayed
 import com.erp.project.R
 import com.erp.project.mainpage.MainActivity
-import java.lang.Exception
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : LoadingActivity(){
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
     private lateinit var autoLogin: CheckBox
@@ -44,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
 
     /*로그인 클릭 시 로그인 처리에 대한 메소드*/
     fun loginConnect(v: View) {
+    startProgress()
         val tomcatMassage: String
         val id = enter_id.text.toString()
         val pw = enter_pw.text.toString()
@@ -55,8 +55,9 @@ class LoginActivity : AppCompatActivity() {
                 if (tomcatMassage != null) {
                     val nextMainPage = Intent(this, MainActivity::class.java)
                     startActivity(nextMainPage)
-                }else{
-                    Toast.makeText(applicationContext, "아이디와 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(applicationContext, "아이디와 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT)
+                        .show()
                 }
             } else {
                 Toast.makeText(applicationContext, "아이디와 비밀번호를 입력하세요", Toast.LENGTH_SHORT).show()
@@ -87,23 +88,24 @@ class LoginActivity : AppCompatActivity() {
                 editor.apply()
             }
         }
-        if (sharedPreferences.getBoolean("autoLoginEnabled",false)){
-            enter_id.setText(sharedPreferences.getString("input_id","").toString())
-            enter_pw.setText(sharedPreferences.getString("input_pw","").toString())
+        if (sharedPreferences.getBoolean("autoLoginEnabled", false)) {
+            enter_id.setText(sharedPreferences.getString("input_id", "").toString())
+            enter_pw.setText(sharedPreferences.getString("input_pw", "").toString())
             autoLogin.isChecked = true
         }
     }
 
     /*forget password 클릭 시 팝업창*/
     fun passwordPopup(view: View) {
-        val customDialog = LayoutInflater.from(this).inflate(R.layout.login_custom_popup, null, false)
+        val customDialog =
+            LayoutInflater.from(this).inflate(R.layout.login_custom_popup, null, false)
         val builder = AlertDialog.Builder(this)
             .setView(customDialog)
-        val alertDialog : AlertDialog = builder.create();
+        val alertDialog: AlertDialog = builder.create();
         alertDialog.setCancelable(false)
         alertDialog.show()
         val closeButton = customDialog.findViewById<Button>(R.id.login_custom_button)
-        closeButton.setOnClickListener{
+        closeButton.setOnClickListener {
             alertDialog.dismiss()
         }
     }
@@ -118,25 +120,28 @@ class LoginActivity : AppCompatActivity() {
         }
     }*/
 
-    fun enterKeyController(){
+    private fun enterKeyController() {
         val idArea = findViewById<EditText>(R.id.login_pt_id)
         val pwArea = findViewById<EditText>(R.id.login_pw_password)
-        idArea.setOnEditorActionListener{v, id, event ->
-            if(id == EditorInfo.IME_ACTION_NEXT){
+        idArea.setOnEditorActionListener { v, id, event ->
+            if (id == EditorInfo.IME_ACTION_NEXT) {
                 pwArea.requestFocus()
             }
             true
         }
         pwArea.setOnKeyListener { v, keyCode, event ->
-            if((event.action == ACTION_DOWN) && (keyCode == KEYCODE_ENTER)){
-                val imm : InputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+            if ((event.action == ACTION_DOWN) && (keyCode == KEYCODE_ENTER)) {
+                val imm: InputMethodManager =
+                    getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(pwArea.windowToken, 0)
-                true
             }
             false
-
         }
 
+    }
+    private fun startProgress() {
+        progressON("Loading...")
+        Handler().postDelayed({ progressOFF() }, 3500)
     }
 
 }
