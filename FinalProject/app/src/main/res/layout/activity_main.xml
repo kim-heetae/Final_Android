@@ -164,20 +164,19 @@
             android:layout_weight="2.5">
 
             <ImageView
-                android:id="@+id/main_icon_attend"
+                android:id="@+id/main_icon_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/icon_attend"
                 android:layout_weight="7"
-                android:onClick="clickAttend"/>
+                app:srcCompat="@drawable/main_icon_my_info" />
 
             <TextView
-                android:id="@+id/main_tv_attend"
+                android:id="@+id/main_tv_my_info"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:text="근태관리"
+                android:text="내정보관리"
                 android:textStyle="bold"/>
         </LinearLayout>
 
@@ -188,20 +187,19 @@
             android:layout_weight="2.5">
 
             <ImageView
-                android:id="@+id/main_icon_info"
+                android:id="@+id/main_icon_attend"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/icon_info"
                 android:layout_weight="7"
-                android:onClick="clickMyInfo"/>
+                app:srcCompat="@drawable/icon_attendance" />
 
             <TextView
-                android:id="@+id/main_tv_info"
+                android:id="@+id/main_tv_attend"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:text="내정보관리"
+                android:text="근태관리"
                 android:textStyle="bold"/>
         </LinearLayout>
 
