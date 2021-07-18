@@ -17,12 +17,12 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.HandlerCompat.postDelayed
 import com.erp.project.R
 import com.erp.project.mainpage.MainActivity
+import org.json.JSONArray
+import org.json.JSONObject
 
-class LoginActivity : LoadingActivity(){
+class LoginActivity : LoadingActivity() {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
     private lateinit var autoLogin: CheckBox
@@ -43,17 +43,32 @@ class LoginActivity : LoadingActivity(){
 
     /*로그인 클릭 시 로그인 처리에 대한 메소드*/
     fun loginConnect(v: View) {
-    startProgress()
-        val tomcatMassage: String
+        startProgress()
+        val tomcatMessage: String
         val id = enter_id.text.toString()
         val pw = enter_pw.text.toString()
         val ad = "ad"
         try {
             val loginTomcat = LoginConnectTomcat()
             if (id.isNotEmpty() && pw.isNotEmpty()) {
-                tomcatMassage = loginTomcat.execute(id, pw, ad).get()
-                if (tomcatMassage != null) {
+                tomcatMessage = loginTomcat.execute(id, pw, ad).get()
+                //[]은 array 형식이라서 처음에 array로 담아줌
+                val jarray: JSONArray = JSONArray(tomcatMessage)
+                val jsonArray: String = jarray.getString(0)
+                Log.i("LoginActivity", "ID값 ==> $jsonArray")
+                //[]에서 각각의 값을 {}(object)로 담아줌.
+                val jsonObject: JSONObject = jarray.getJSONObject(0)
+                val jsonEno: String = jsonObject.getString("E_NO")
+                Log.i("LoginActivity", "ID값 ==> $jsonEno")
+                if (tomcatMessage.isNotEmpty() && id == jsonEno) {
+                    val jsonAuth: String = jsonObject.getString("PA_AUTH")
+                    val jsonEpos: String = jsonObject.getString("E_POS")
+                    val jsonEname: String = jsonObject.getString("E_NAME")
+                    val jsonDno: String = jsonObject.getString("D_NO")
+                    val jsonDname: String = jsonObject.getString("D_NAME")
+                    val putData: DataConstructor = DataConstructor(jsonAuth, jsonEpos, jsonEname, jsonEno, jsonDno,jsonDname)
                     val nextMainPage = Intent(this, MainActivity::class.java)
+                    nextMainPage.putExtra("Data", putData)
                     startActivity(nextMainPage)
                 } else {
                     Toast.makeText(applicationContext, "아이디와 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT)
@@ -139,6 +154,7 @@ class LoginActivity : LoadingActivity(){
         }
 
     }
+
     private fun startProgress() {
         progressON("Loading...")
         Handler().postDelayed({ progressOFF() }, 3500)

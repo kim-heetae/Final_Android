@@ -7,6 +7,6 @@ import com.erp.project.R
 class DeptNoticeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_emp)
+        setContentView(R.layout.activity_dept)
     }
 }

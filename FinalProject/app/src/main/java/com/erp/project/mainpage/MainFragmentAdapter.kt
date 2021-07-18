@@ -14,7 +14,7 @@ class MainFragmentAdapter(fm: FragmentManager, lifecycle: Lifecycle) :
     override fun getItemCount(): Int {
         return 2
     }
-
+    //선택하는 경우에 따른 생성되는 fragment
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> {

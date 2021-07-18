@@ -3,26 +3,38 @@ package com.erp.project.mainpage
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.erp.project.R
 import com.erp.project.attend.AttendActivity
 import com.erp.project.calender.CalendarActivity
 import com.erp.project.chat.ChatMainActivity
+import com.erp.project.login.DataConstructor
 import com.erp.project.myinfo.MyInfoActivity
+import com.erp.project.noticeboard.DeptNoticeActivity
+import com.erp.project.noticeboard.NoticeBoardActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlin.system.exitProcess
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val data : DataConstructor? = intent.getParcelableExtra("Data")
+        val eno : TextView = findViewById(R.id.attend_tv_id)
+        val ename : TextView = findViewById(R.id.attend_tv_ename)
+        val dname : TextView = findViewById(R.id.attend_tv_dept)
+        val epos : TextView = findViewById(R.id.attend_tv_pos)
+        if (data != null) {
+            eno.text = data.e_no
+            ename.text = data.e_name
+            dname.text = data.d_name
+            epos.text = data.e_pos
+        }
         noticeTable()
-
     }
 
 
@@ -42,6 +54,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }.attach()
+
     }
 
     fun clickCalendar(view: View) {
@@ -60,5 +73,18 @@ class MainActivity : AppCompatActivity() {
         val clickChat = Intent(this, ChatMainActivity::class.java)
         startActivity(clickChat)
     }
+
+    fun clickBoards(view: View) {
+        val tablayout: TabLayout = findViewById(R.id.main_tab_board)
+        var nextBoard = Intent(this, NoticeBoardActivity::class.java)
+        if (tablayout.getTabAt(0)!!.isSelected) {
+            startActivity(nextBoard)
+        }
+        else {
+            nextBoard = Intent(this, DeptNoticeActivity::class.java)
+            startActivity(nextBoard)
+        }
+    }
+
 
 }

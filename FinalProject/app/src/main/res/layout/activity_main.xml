@@ -30,8 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
-            android:layout_weight="4"
-            android:background="@drawable/main_table_outside">
+            android:layout_weight="4">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -43,7 +42,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:background="@drawable/main_table_inside"
                     android:gravity="center"
                     android:text="100001"
                     android:textStyle="bold" />
@@ -68,7 +66,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:background="@drawable/main_table_inside"
                     android:gravity="center"
                     android:text="홍길동"
                     android:textStyle="bold"/>
@@ -78,7 +75,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
-                    android:background="@drawable/main_table_inside"
                     android:gravity="center"
                     android:text="사원"
                     android:textStyle="bold"/>
@@ -112,7 +108,8 @@
             android:layout_height="30dp"
             android:layout_gravity="start"
             android:gravity="center|right"
-            android:text="▶ 더보기" />
+            android:text="▶ 더보기"
+            android:onClick="clickBoards"/>
     </LinearLayout>
 
     <androidx.viewpager2.widget.ViewPager2
@@ -168,7 +165,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
-                app:srcCompat="@drawable/main_icon_my_info" />
+                app:srcCompat="@drawable/main_icon_my_info"
+                android:onClick="clickMyInfo"/>
 
             <TextView
                 android:id="@+id/main_tv_my_info"
@@ -191,7 +189,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
-                app:srcCompat="@drawable/icon_attendance" />
+                app:srcCompat="@drawable/icon_attendance"
+                android:onClick="clickAttend"/>
 
             <TextView
                 android:id="@+id/main_tv_attend"
