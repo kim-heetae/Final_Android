@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".attend.AttendActivity"
-    android:layout_margin="15dp">
+    tools:context=".attend.AttendActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="15dp">
 
         <ImageView
             android:id="@+id/info_logo"
@@ -86,9 +86,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="476dp"
-        android:layout_margin="20dp"
-        android:orientation="vertical">
+        android:layout_height="400sp"
+        android:layout_marginHorizontal="20sp"
+        android:orientation="vertical"
+        android:scrollbars="horizontal"
+        android:layout_weight="9">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -309,5 +311,16 @@
 
     </LinearLayout>
 
-
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemIconTint="@null"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:itemRippleColor="@null"
+        app:menu="@menu/bottom_navigation_menu"
+        android:layout_weight="1"/>
 </LinearLayout>

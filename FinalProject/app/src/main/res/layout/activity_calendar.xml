@@ -14,7 +14,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="15dp">
 
             <ImageView
                 android:id="@+id/attend_logo"
@@ -89,12 +90,28 @@
             android:id="@+id/calendar_custom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="7.5"
+            android:layout_margin="15dp"
             />
-
 
         <TextView
             android:id="@+id/calendar_text"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:layout_margin="15dp"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:itemIconTint="@null"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:itemRippleColor="@null"
+            app:menu="@menu/bottom_navigation_menu"
+            android:layout_weight="1"/>
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

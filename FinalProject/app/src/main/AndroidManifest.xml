@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_erp"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
+        <!--처음부터 보고 싶으면 splashactivity에 intent를 맞추기-->
         <activity android:name=".SplashActivity"
             android:theme="@style/Start_splash">
             <intent-filter>
