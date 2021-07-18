@@ -19,21 +19,19 @@ import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var data : DataConstructor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val data : DataConstructor? = intent.getParcelableExtra("Data")
-        val eno : TextView = findViewById(R.id.attend_tv_id)
-        val ename : TextView = findViewById(R.id.attend_tv_ename)
-        val dname : TextView = findViewById(R.id.attend_tv_dept)
-        val epos : TextView = findViewById(R.id.attend_tv_pos)
-        if (data != null) {
-            eno.text = data.e_no
-            ename.text = data.e_name
-            dname.text = data.d_name
-            epos.text = data.e_pos
-        }
+        data  = intent.getParcelableExtra("Data")!!
+        val eno : TextView = findViewById(R.id.tv_id)
+        val ename : TextView = findViewById(R.id.tv_ename)
+        val dname : TextView = findViewById(R.id.tv_dept)
+        val epos : TextView = findViewById(R.id.tv_pos)
+        eno.text = data.e_no
+        ename.text = data.e_name
+        dname.text = data.d_name
+        epos.text = data.e_pos
         noticeTable()
     }
 
@@ -59,6 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     fun clickCalendar(view: View) {
         val clickCalendar = Intent(this, CalendarActivity::class.java)
+        clickCalendar.putExtra("data", data);
         startActivity(clickCalendar)
     }
     fun clickAttend(view: View) {

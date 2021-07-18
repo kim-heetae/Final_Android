@@ -18,6 +18,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.erp.project.R
+import com.erp.project.common.DataCorutine
 import com.erp.project.mainpage.MainActivity
 import org.json.JSONArray
 import org.json.JSONObject
@@ -51,23 +52,23 @@ class LoginActivity : LoadingActivity() {
         try {
             val loginTomcat = LoginConnectTomcat()
             if (id.isNotEmpty() && pw.isNotEmpty()) {
-                tomcatMessage = loginTomcat.execute(id, pw, ad).get()
+                tomcatMessage = loginTomcat.execute(id,pw,ad).get()
+                Log.i("loginConnect", "TEST값 ======> $tomcatMessage")
                 //[]은 array 형식이라서 처음에 array로 담아줌
                 val jarray: JSONArray = JSONArray(tomcatMessage)
-                val jsonArray: String = jarray.getString(0)
-                Log.i("LoginActivity", "ID값 ==> $jsonArray")
+                Log.i("LoginActivity", "ID값 ==> $jarray")
                 //[]에서 각각의 값을 {}(object)로 담아줌.
                 val jsonObject: JSONObject = jarray.getJSONObject(0)
                 val jsonEno: String = jsonObject.getString("E_NO")
                 Log.i("LoginActivity", "ID값 ==> $jsonEno")
-                if (tomcatMessage.isNotEmpty() && id == jsonEno) {
+                if (jsonEno == id) {
                     val jsonAuth: String = jsonObject.getString("PA_AUTH")
                     val jsonEpos: String = jsonObject.getString("E_POS")
                     val jsonEname: String = jsonObject.getString("E_NAME")
                     val jsonDno: String = jsonObject.getString("D_NO")
                     val jsonDname: String = jsonObject.getString("D_NAME")
-                    val putData: DataConstructor = DataConstructor(jsonAuth, jsonEpos, jsonEname, jsonEno, jsonDno,jsonDname)
                     val nextMainPage = Intent(this, MainActivity::class.java)
+                    val putData: DataConstructor = DataConstructor(jsonAuth, jsonEpos, jsonEname, jsonEno, jsonDno,jsonDname)
                     nextMainPage.putExtra("Data", putData)
                     startActivity(nextMainPage)
                 } else {
