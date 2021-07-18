@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.erp.project">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_erp"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_erp"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FinalProject">
+        <!--처음부터 보고 싶으면 splashactivity에 intent를 맞추기-->
+        <activity android:name=".SplashActivity"
+            android:theme="@style/Start_splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".noticeboard.DeptNoticeActivity"/>
+        <activity android:name=".noticeboard.NoticeBoardActivity" />
+        <activity android:name=".myinfo.MyInfoActivity" />
+        <activity android:name=".mainpage.MainActivity"/>
+        <activity android:name=".chat.ChatPageActivity" />
+        <activity android:name=".login.LoginActivity"/>
+        <activity android:name=".chat.ChatMainActivity" />
+        <activity android:name=".chat.ChatListActivity" />
+        <activity android:name=".calender.CalendarActivity" />
+        <activity android:name=".attend.AttendActivity" />
+    </application>
+
+</manifest>

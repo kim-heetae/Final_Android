@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "155368995959",
+    "project_id": "project-android-1ad3d",
+    "storage_bucket": "project-android-1ad3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155368995959:android:c2f759d6c54816fa1eda72",
+        "android_client_info": {
+          "package_name": "com.erp.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155368995959-6qucl90phu57mgu9j9eonb67l60ms13b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvZ9infWfDMJ2LgWJJYpyt1YQJr8K8Ieg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155368995959-6qucl90phu57mgu9j9eonb67l60ms13b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
