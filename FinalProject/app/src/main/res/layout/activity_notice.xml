@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/attend_logo"
+            android:id="@+id/img_logo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="4"
@@ -38,7 +38,7 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/attend_tv_id"
+                    android:id="@+id/tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
@@ -48,7 +48,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/attend_tv_dept"
+                    android:id="@+id/tv_dept"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
@@ -63,7 +63,7 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/attend_tv_ename"
+                    android:id="@+id/tv_ename"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
@@ -73,7 +73,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/attend_tv_pos"
+                    android:id="@+id/tv_pos"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
