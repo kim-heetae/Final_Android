@@ -176,7 +176,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/icon_chatbot" />
+            app:srcCompat="@drawable/icon_chatbot_blue" />
     </LinearLayout>
 
     <LinearLayout
@@ -205,7 +205,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/mini_icon_chat" />
+            app:srcCompat="@drawable/icon_chat_blue" />
     </LinearLayout>
 
     <LinearLayout
@@ -234,7 +234,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/icon_plus" />
+            app:srcCompat="@drawable/icon_plus_blue" />
     </LinearLayout>
 
     <LinearLayout
