@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.erp.project.R
-import com.erp.project.attend.AttendActivity
+import com.erp.project.attend.AttendFragment
 import com.erp.project.calender.CalendarActivity
 import com.erp.project.chat.ChatMainActivity
 import com.erp.project.login.DataConstructor
@@ -16,14 +16,13 @@ import com.erp.project.noticeboard.DeptNoticeActivity
 import com.erp.project.noticeboard.NoticeBoardActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var data : DataConstructor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        data  = intent.getParcelableExtra("Data")!!
+       data  = intent.getParcelableExtra("Data")!!
         val eno : TextView = findViewById(R.id.tv_id)
         val ename : TextView = findViewById(R.id.tv_ename)
         val dname : TextView = findViewById(R.id.tv_dept)
@@ -61,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(clickCalendar)
     }
     fun clickAttend(view: View) {
-        val clickAttend = Intent(this, AttendActivity::class.java)
+        val clickAttend = Intent(this, AttendFragment::class.java)
         startActivity(clickAttend)
     }
     fun clickMyInfo(view: View) {

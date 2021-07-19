@@ -4,7 +4,14 @@ import android.os.Parcel
 import android.os.Parcelable
 
 /*파일을 하나에 묶어서 다른 activity에 보내는 방식*/
-class DataConstructor(var pa_auth: String?, var e_pos: String?, var e_name: String?, var e_no: String?, var d_no: String?, var d_name: String?) : Parcelable{
+class DataConstructor(
+    var pa_auth: String?,
+    var e_pos: String?,
+    var e_name: String?,
+    var e_no: String?,
+    var d_no: String?,
+    var d_name: String?,
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
@@ -12,8 +19,7 @@ class DataConstructor(var pa_auth: String?, var e_pos: String?, var e_name: Stri
         parcel.readString(),
         parcel.readString(),
         parcel.readString()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(pa_auth)

@@ -2,48 +2,77 @@ package com.erp.project.common
 
 import android.util.Log
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.Default
 import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.io.OutputStreamWriter
-import java.net.HttpURLConnection
-import java.net.URL
+import okhttp3.*
+import org.json.JSONArray
+import org.json.JSONObject
 
-class DataCorutine {
-    var sendMsg: String? = null
-    var receiveMsg: String? = null
-    fun loginConnect(id: String, pw: String, ad: String) {
-        CoroutineScope(IO).launch {
-            val apiURL = "http://192.168.1.10:9000/getLoginForm2.lg"//여기는 자신의 ip주소 및 port번호로 맞추기 --> 톰캣서버 접속용 그 후에 자바로 이동
-            val url = URL(apiURL)
-            val con = url.openConnection() as HttpURLConnection
-            con.setRequestProperty("Connection-Type", "application/x-www-form-urlencoded")
-            con.requestMethod = "POST"
-            Log.i("LoginConnectTomcat", "con:$con")
-            val osw = OutputStreamWriter(con.outputStream)
-            //톰캣 서버에 전송할 메시지 처리
-            sendMsg = "e_no=$id&e_pw=$pw&ad=$ad"
-            Log.i("LoginConnectTomcat", sendMsg!!)
-            osw.write(sendMsg)
-            osw.flush()
-            val responseCode = con.responseCode //200 204 404 500]
-            Log.i("LoginConnectTomcat", "responseCode:$responseCode")
-            var br: BufferedReader? = null
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                br = BufferedReader(
-                    InputStreamReader(
-                        con.inputStream, "UTF-8"))
-                var inputLine: String? = null
-                val sb_res = StringBuilder()
-                while (br.readLine().also { inputLine = it } != null) {
-                    sb_res.append(inputLine)
+//okhttp로 변환 -> inputstream outputstream 없어도 적용 가능.
+//okhttp 더 위에 있는 것 => retrofit
+//Unit(void)가 아닌 String으로 받아야 하는데...
+
+class DataCoroutine(val id: String, val pw: String, val ad: String) {
+    lateinit var putData: String
+    fun loginConnect(): String {
+        putData = Job.toString()
+        val http = CoroutineScope(IO).launch {
+            val connect = CoroutineScope(Default).async {
+                getHttp(id, pw, ad)
+            }
+            if (getHttp(id, pw, ad) != null) {
+                connect.await()
+            } else {
+                connect.cancel()
+            }
+            Log.i("Connect", "==================>$connect" )
+        }
+        Log.i("http", "=================$http")
+        putData = http.isActive.toString()
+        return putData
+    }
+
+    fun getHttp(id: String, pw: String, ad: String): String? {
+        var data: String? = null
+        //클라이언트 만들기
+        val client = OkHttpClient.Builder().build()
+        //요청하기
+        val req_body: FormBody = FormBody.Builder()
+            .add("e_no", id)
+            .add("e_pw", pw)
+            .add("ad", ad)
+            .build()
+
+        val req = Request.Builder()
+            .url("http://192.168.0.64:9000/getLoginForm2.lg")
+            .post(req_body)
+            .build()
+        //응답
+        client.newCall(req).execute().use { response ->
+            if (response.body != null) {
+                val jarray: JSONArray = JSONArray(response.body!!.string())
+                Log.i("IDTest", "ID값 ==> $jarray")
+                //[]에서 각각의 값을 {}(object)로 담아줌.
+                val jsonObject: JSONObject = jarray.getJSONObject(0)
+                val jsonEno: String = jsonObject.getString("E_NO")
+                Log.i("LoginActivity", "ID값 ==> $jsonEno")
+                when (jsonEno) {
+                    id -> {
+                        data = response.body.toString()
+                        Log.i("data", "================$data")
+                    }
+                    else -> return null
                 }
-                receiveMsg = sb_res.toString()
-                Log.i("LoginConnectTomcat", "receiveMsg:$receiveMsg")
+            } else {
+                "Not Data"
             }
         }
-        return
+        return data
     }
 }
+
 

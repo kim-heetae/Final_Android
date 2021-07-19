@@ -3,6 +3,7 @@
     package="com.erp.project">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS"/>
     <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
@@ -29,7 +30,7 @@
         <activity android:name=".chat.ChatMainActivity" />
         <activity android:name=".chat.ChatListActivity" />
         <activity android:name=".calender.CalendarActivity" />
-        <activity android:name=".attend.AttendActivity" />
+        <activity android:name=".attend.AttendFragment" />
     </application>
 
 </manifest>
