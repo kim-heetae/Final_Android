@@ -3,37 +3,40 @@
     android:layout_width="match_parent"
     android:layout_height="75dp"
     android:orientation="horizontal"
-    android:padding="10dp">
+>
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:id="@+id/nav_calendar"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        app:srcCompat="@drawable/icon_calendar" />
+        app:srcCompat="@drawable/nav_schedule" />
 
     <ImageView
         android:id="@+id/nav_board"
         android:layout_width="75dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/icon_boards" />
+        app:srcCompat="@drawable/nav_board" />
 
     <ImageView
         android:id="@+id/nav_home"
         android:layout_width="75dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/icon_home_2" />
 
     <ImageView
         android:id="@+id/nav_attend"
         android:layout_width="75dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-
-        app:srcCompat="@drawable/icon_attendance" />
+        app:srcCompat="@drawable/nav_attend" />
 
     <ImageView
         android:id="@+id/nav_chat"
         android:layout_width="75dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/icon_chat" />
+        app:srcCompat="@drawable/nav_chat" />
 </LinearLayout>
