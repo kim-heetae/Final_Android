@@ -18,8 +18,10 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.erp.project.R
-import com.erp.project.common.DataCorutine
+import com.erp.project.common.DataCoroutine
 import com.erp.project.mainpage.MainActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -52,21 +54,19 @@ class LoginActivity : LoadingActivity() {
         try {
             val loginTomcat = LoginConnectTomcat()
             if (id.isNotEmpty() && pw.isNotEmpty()) {
-                tomcatMessage = loginTomcat.execute(id,pw,ad).get()
+                tomcatMessage = loginTomcat.execute(id, pw, ad).get()
                 Log.i("loginConnect", "TEST값 ======> $tomcatMessage")
-                //[]은 array 형식이라서 처음에 array로 담아줌
                 val jarray: JSONArray = JSONArray(tomcatMessage)
-                Log.i("LoginActivity", "ID값 ==> $jarray")
+                Log.i("IDTest", "ID값 ==> $jarray")
                 //[]에서 각각의 값을 {}(object)로 담아줌.
                 val jsonObject: JSONObject = jarray.getJSONObject(0)
                 val jsonEno: String = jsonObject.getString("E_NO")
-                Log.i("LoginActivity", "ID값 ==> $jsonEno")
+                val jsonAuth: String = jsonObject.getString("PA_AUTH")
+                val jsonEpos: String = jsonObject.getString("E_POS")
+                val jsonEname: String = jsonObject.getString("E_NAME")
+                val jsonDno: String = jsonObject.getString("D_NO")
+                val jsonDname: String = jsonObject.getString("D_NAME")
                 if (jsonEno == id) {
-                    val jsonAuth: String = jsonObject.getString("PA_AUTH")
-                    val jsonEpos: String = jsonObject.getString("E_POS")
-                    val jsonEname: String = jsonObject.getString("E_NAME")
-                    val jsonDno: String = jsonObject.getString("D_NO")
-                    val jsonDname: String = jsonObject.getString("D_NAME")
                     val nextMainPage = Intent(this, MainActivity::class.java)
                     val putData: DataConstructor = DataConstructor(jsonAuth, jsonEpos, jsonEname, jsonEno, jsonDno,jsonDname)
                     nextMainPage.putExtra("Data", putData)
@@ -82,6 +82,7 @@ class LoginActivity : LoadingActivity() {
             Log.i("LoginActivity", e.toString())
         }
     }
+
 
 
     /*자동 로그인 메소드*/
