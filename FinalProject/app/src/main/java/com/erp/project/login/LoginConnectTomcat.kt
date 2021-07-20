@@ -18,7 +18,7 @@ class LoginConnectTomcat : AsyncTask<String, Void, String>() {
     //백그라운드에서 실행할 코드를 포함하는 메소드임.
     override fun doInBackground(vararg strings: String): String? {
         //String apiURL = "http://192.168.0.244:7000/android/androidOracleConnection.jsp";
-        val apiURL = "http://192.168.0.56:9000/getLoginForm2.lg"//여기는 자신의 ip주소 및 port번호로 맞추기 --> 톰캣서버 접속용 그 후에 자바로 이동
+        val apiURL = "http://192.168.0.56:9000/getLoginForm.lg"//여기는 자신의 ip주소 및 port번호로 맞추기 --> 톰캣서버 접속용 그 후에 자바로 이동
         try {
             val url = URL(apiURL)
             val con = url.openConnection() as HttpURLConnection
