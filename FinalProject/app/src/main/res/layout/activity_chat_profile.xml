@@ -103,7 +103,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="홍길동" />
+            android:text="홍길동"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <TextView
@@ -133,7 +134,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="홍길동" />
+            android:text="홍길동"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -155,7 +157,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="홍길동" />
+            android:text="홍길동"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -177,7 +180,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="홍길동" />
+            android:text="홍길동"
+            android:textSize="20sp"/>
 
     </LinearLayout>
 
@@ -209,7 +213,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="홍길동" />
+            android:text="홍길동"
+            android:textSize="20sp"/>
 
     </LinearLayout>
 
@@ -223,7 +228,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
-            android:layout_weight="3"
+            android:layout_weight="3.15"
             app:srcCompat="@drawable/icon_profile" />
 
         <TextView
@@ -232,7 +237,8 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center_vertical"
-            android:text="홍길동" />
+            android:text="홍길동"
+            android:textSize="20sp"/>
 
         <ImageView
             android:id="@+id/chat_plus"
@@ -261,7 +267,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="홍길동" />
+            android:text="홍길동"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -283,7 +290,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="홍길동" />
+            android:text="홍길동"
+            android:textSize="20sp"/>
     </LinearLayout>
 
 
