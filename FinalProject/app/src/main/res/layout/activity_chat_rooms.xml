@@ -103,7 +103,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="인사과 전체 채팅방" />
+            android:text="인사과 전체 채팅방"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -125,7 +126,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="회계과 전체 채팅방" />
+            android:text="회계과 전체 채팅방"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -147,7 +149,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="인사과 전체 채팅방" />
+            android:text="인사과 전체 채팅방"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -169,7 +172,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="급여팀" />
+            android:text="급여팀"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -191,7 +195,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="홍길동" />
+            android:text="홍길동"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -213,7 +218,8 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center_vertical"
-            android:text="김희태 부장님" />
+            android:text="김희태 부장님"
+            android:textSize="20sp"/>
 
         <ImageView
             android:id="@+id/chat_room_plus"
@@ -242,7 +248,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="과장님" />
+            android:text="과장님"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -264,7 +271,8 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center_vertical"
-            android:text="인사혁신팀" />
+            android:text="인사혁신팀"
+            android:textSize="20sp"/>
     </LinearLayout>
 
 
