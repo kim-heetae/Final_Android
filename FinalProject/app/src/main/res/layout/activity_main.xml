@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mainpage.MainActivity"
+    android:layout_margin="15dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:scaleType="fitCenter"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            app:srcCompat="@drawable/mainlogo" />
+
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="4">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="100001"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_dept"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="인사과"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_ename"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="홍길동"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_pos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="사원"
+                    android:textStyle="bold"/>
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="39dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/main_tab_board"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            app:tabBackground="@drawable/main_tab"
+            app:tabTextColor="@color/white"
+            app:tabIndicatorFullWidth="false"
+            />
+
+        <TextView
+            android:id="@+id/main_tv_more"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="start"
+            android:gravity="center|right"
+            android:text="▶ 더보기"
+            android:onClick="clickBoards"/>
+    </LinearLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/main_tab_viewpager2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="2.5"
+            >
+
+            <ImageView
+                android:id="@+id/main_icon_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/icon_calendar"
+                android:layout_weight="7"
+                android:onClick="clickCalendar"/>
+
+            <TextView
+                android:id="@+id/main_tv_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="일정관리"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="2.5">
+
+            <ImageView
+                android:id="@+id/main_icon_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                app:srcCompat="@drawable/main_icon_my_info"
+                android:onClick="clickMyInfo"/>
+
+            <TextView
+                android:id="@+id/main_tv_my_info"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="내정보관리"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2.5">
+
+            <ImageView
+                android:id="@+id/main_icon_attend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                app:srcCompat="@drawable/icon_attendance"
+                android:onClick="clickAttend"/>
+
+            <TextView
+                android:id="@+id/main_tv_attend"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="근태관리"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2.5">
+
+            <ImageView
+                android:id="@+id/main_icon_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/icon_chat"
+                android:layout_weight="7"
+                android:onClick="clickChat"/>
+
+            <TextView
+                android:id="@+id/main_tv_chat"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="채팅"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
