@@ -7,9 +7,9 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class AttendData(
         @SerializedName("W_DATE")
-        var w_date :String = "",
+        var w_date: String = "",
         @SerializedName("W_ATTEND")
-        var w_attend :String = "",
+        var w_attend: String = "",
         @SerializedName("W_LEAVE")
-        var w_leave :String = ""
-):Parcelable
+        var w_leave: String = "",
+) : Parcelable

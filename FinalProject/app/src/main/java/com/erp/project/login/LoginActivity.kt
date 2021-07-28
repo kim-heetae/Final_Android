@@ -46,7 +46,6 @@ class LoginActivity : LoadingActivity() {
 
     /*로그인 클릭 시 로그인 처리에 대한 메소드*/
     fun loginConnect(v: View) {
-        startProgress()
         val tomcatMessage: String
         val id = enter_id.text.toString()
         val pw = enter_pw.text.toString()
@@ -68,7 +67,7 @@ class LoginActivity : LoadingActivity() {
                 val jsonDname: String = jsonObject.getString("D_NAME")
                 if (jsonEno == id) {
                     val nextMainPage = Intent(this, MainActivity::class.java)
-                    val putData: DataConstructor = DataConstructor(jsonAuth, jsonEpos, jsonEname, jsonEno, jsonDno,jsonDname)
+                    val putData: DataConstructor = DataConstructor(jsonAuth, jsonEpos, jsonEname, jsonEno, jsonDno,jsonDname)//직렬화로 데이터값 저장
                     nextMainPage.putExtra("Data", putData)
                     startActivity(nextMainPage)
                 } else {

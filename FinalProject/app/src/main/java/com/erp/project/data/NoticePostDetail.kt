@@ -5,17 +5,17 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class NoticePostDetail (
+data class NoticePostDetail(
         @SerializedName("BN_NO")
-        var bn_no :String = "",
+        var bn_no: String = "",
         @SerializedName("BN_NAME")
-        var bn_name :String = "",
+        var bn_name: String = "",
         @SerializedName("E_NAME")
-        var e_name :String = "",
+        var e_name: String = "",
         @SerializedName("BN_DATE")
-        var bn_date :String = "",
+        var bn_date: String = "",
         @SerializedName("BN_HIT")
-        var bn_hit :String = "",
+        var bn_hit: String = "",
         @SerializedName("BN_CONTENT")
-        var bn_content :String = ""
-):Parcelable
+        var bn_content: String = "",
+) : Parcelable

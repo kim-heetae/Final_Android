@@ -7,9 +7,9 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class CalendarData(
         @SerializedName("SCH_DATE")
-        var sch_date :String = "",
+        var sch_date: String = "",
         @SerializedName("SCH_ENDDATE")
-        var sch_enddate :String = "",
+        var sch_enddate: String = "",
         @SerializedName("SCH_NAME")
-        var sch_name :String = ""
-):Parcelable
+        var sch_name: String = "",
+) : Parcelable
