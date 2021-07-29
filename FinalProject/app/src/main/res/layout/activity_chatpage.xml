@@ -4,6 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/chatroom"
+    android:orientation="vertical"
     tools:context=".chat.ChatPageActivity">
+
+
+    <TextView
+        android:id="@+id/tv_your_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안녕하세요!"
+        android:layout_gravity="left"
+        android:layout_margin="15dp"
+        android:textSize="15sp"
+        android:padding="10dp"
+        android:background="@drawable/your_chat"
+/>
+
+    <TextView
+        android:id="@+id/tv_my_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안녕하세요^^"
+        android:layout_margin="15dp"
+        android:textSize="15sp"
+        android:padding="10dp"
+        android:layout_gravity="right"
+        android:background="@drawable/my_chat"
+        />
 
 </LinearLayout>
